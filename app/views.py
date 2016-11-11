@@ -6,8 +6,12 @@ from django.urls import reverse_lazy
 
 
 class IndexView(TemplateView):
-    model = Location
     template_name = 'index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['location_list'] = Location.objects.all()
+        return context
 
 class LocationCreateView(CreateView):
     model = Location
