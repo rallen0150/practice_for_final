@@ -16,10 +16,11 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
-from app.views import IndexView, LocationCreateView
+from app.views import IndexView, LocationCreateView, AnotherTestView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', IndexView.as_view(), name='index_view'),
-    url(r'^create/$', LocationCreateView.as_view(), name='location_create_view')
+    url(r'^create/$', LocationCreateView.as_view(), name='location_create_view'),
+    url(r'^test/$', AnotherTestView.as_view(), name='test_view')
 ]

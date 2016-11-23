@@ -17,3 +17,6 @@ class LocationCreateView(CreateView):
     model = Location
     fields = ('lat', 'lng')
     success_url = reverse_lazy('index_view')
+
+class AnotherTestView(TemplateView):
+    template_name = 'test.html'
